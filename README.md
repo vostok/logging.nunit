@@ -1,7 +1,7 @@
 # Vostok.Logging.NUnit
 
-[![Build & Test & Publish](https://github.com/vostok/logging.file/actions/workflows/ci.yml/badge.svg)](https://github.com/vostok/logging.file/actions/workflows/ci.yml)
-[![NuGet](https://img.shields.io/nuget/v/Vostok.Logging.File.svg)](https://www.nuget.org/packages/Vostok.Logging.File/)
+[![Build & Test & Publish](https://github.com/vostok/logging.nunit/actions/workflows/ci.yml/badge.svg)](https://github.com/vostok/logging.nunit/actions/workflows/ci.yml)
+[![NuGet](https://img.shields.io/nuget/v/Vostok.Logging.NUnit.svg)](https://www.nuget.org/packages/Vostok.Logging.NUnit/)
 
 An implementation of ILog that writes log events to NUnit.
 

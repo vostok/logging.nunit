@@ -14,8 +14,8 @@ namespace Vostok.Logging.NUnit.Tests
         public void Should_Format_Event()
         {
             StringBuilder sb = new();
-            var writer = Substitute.For<INUnitTextWriterProvider>();
             using StringWriter stringWriter = new(sb);
+            var writer = Substitute.For<INUnitTextWriterProvider>();
             writer.GetWriter().Returns(stringWriter);
             NUnitTextWriterLog log = new(writer);
             const string message = "Hi, Michiel";
