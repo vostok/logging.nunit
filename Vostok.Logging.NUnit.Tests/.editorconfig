@@ -1,0 +1,3 @@
+[*.{cs,tt}]
+
+dotnet_diagnostic.CA1019.severity = none

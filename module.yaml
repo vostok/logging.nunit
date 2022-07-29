@@ -1,0 +1,35 @@
+default:
+  build:
+    target: Vostok.Logging.NUnit.sln
+    tool: dotnet
+
+notests *default:
+  build:
+    configuration: NoTests
+
+  install:
+    - bin\Vostok.Logging.NUnit\netstandard2.0\Vostok.Logging.NUnit.dll
+    - module vostok.logging.abstractions
+
+  deps:
+    - msbuild-binary-output
+    - vostok.devtools
+    - vostok.logging.formatting
+    - vostok.logging.abstractions
+
+dependencyinjection > notests:
+  build:
+    configuration: DependencyInjection
+
+  install:
+    - bin\Vostok.Logging.NUnit.DependencyInjection\netstandard2.0\Vostok.Logging.NUnit.DependencyInjection.dll
+
+full-build > dependencyinjection:
+  build:
+    configuration: Release
+
+  artifacts:
+    - Vostok.Logging.NUnit.Tests\bin\Release\net6.0\Vostok.Logging.NUnit.Tests.dll
+
+  deps:
+    - force: $CURRENT_BRANCH
