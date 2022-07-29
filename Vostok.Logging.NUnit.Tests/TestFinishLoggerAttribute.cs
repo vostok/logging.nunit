@@ -9,12 +9,13 @@ using Vostok.Logging.NUnit.DependencyInjection;
 namespace Vostok.Logging.NUnit.Tests
 {
     [AttributeUsage(AttributeTargets.Class)]
-    internal sealed class TestFinishLoggerAttribute : NUnitAttribute, ITestAction
+    internal sealed class TestFinishLoggerAttribute : ParallelizableAttribute, ITestAction
     {
+        private readonly Stopwatch stopwatch = new();
         private readonly ILog log;
-        private Stopwatch? stopWatch;
 
         public TestFinishLoggerAttribute(ActionTargets targets, bool bound)
+            : base(ParallelScope.Fixtures)
         {
             Targets = targets;
 
@@ -33,12 +34,12 @@ namespace Vostok.Logging.NUnit.Tests
 
         public ActionTargets Targets { get; }
 
-        public void BeforeTest(ITest test) => stopWatch = Stopwatch.StartNew();
+        public void BeforeTest(ITest test) => stopwatch.Start();
 
         public void AfterTest(ITest test)
         {
-            var stopwatch = stopWatch ?? throw new InvalidOperationException("BeforeTest wasn't called");
             log.Info($"Test {test.FullName} finished. Elapsed: {stopwatch.Elapsed}");
+            stopwatch.Reset();
         }
     }
 }

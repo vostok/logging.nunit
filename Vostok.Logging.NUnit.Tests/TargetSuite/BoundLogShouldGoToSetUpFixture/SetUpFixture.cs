@@ -1,6 +1,6 @@
 ﻿using NUnit.Framework;
 
-namespace Vostok.Logging.NUnit.Tests.SuiteTarget.SetUpFixture.BoundLogGoesToSetUpFixture
+namespace Vostok.Logging.NUnit.Tests.TargetSuite.BoundLogShouldGoToSetUpFixture
 {
     [SetUpFixture]
     [TestFinishLogger(ActionTargets.Suite, true)]

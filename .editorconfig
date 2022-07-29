@@ -11,8 +11,6 @@ dotnet_diagnostic.SA1101.severity = none
 
 dotnet_diagnostic.SA1600.severity = none
 
-dotnet_diagnostic.SA1601.severity = none
-
 dotnet_diagnostic.S1128.severity = error
 
 [*.{csproj,vbproj,vcxproj,vcxproj.filters,proj,projitems,shproj}]

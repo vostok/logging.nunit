@@ -1,7 +1,7 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace Vostok.Logging.NUnit.Tests.SuiteTarget.SetUpFixture.BoundLogGoesToSetUpFixture
+namespace Vostok.Logging.NUnit.Tests.TargetSuite.ContextualLogShouldGoToSetUpFixture
 {
     [TestFixture]
     internal class TestFixture

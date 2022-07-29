@@ -1,11 +1,10 @@
 ﻿using FluentAssertions;
 using NUnit.Framework;
 
-namespace Vostok.Logging.NUnit.Tests.TestTarget
+namespace Vostok.Logging.NUnit.Tests.TargetTest.ContextualLogShouldGoToTest
 {
     [TestFixture]
-    [TestFinishLogger(ActionTargets.Test, true)]
-    internal class All_GoesToTestFixture_Should
+    internal class TestFixture
     {
         [Test]
         public void Test() => true.Should().BeTrue();
