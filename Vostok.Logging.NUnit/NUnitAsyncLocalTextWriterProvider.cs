@@ -7,6 +7,6 @@ namespace Vostok.Logging.NUnit
     public sealed class NUnitAsyncLocalTextWriterProvider : INUnitTextWriterProvider
     {
         [Pure]
-        public TextWriter GetWriter() => TestContext.Progress;
+        TextWriter INUnitTextWriterProvider.GetWriter() => TestContext.Progress;
     }
 }

@@ -14,6 +14,6 @@ namespace Vostok.Logging.NUnit
         }
 
         [Pure]
-        public TextWriter GetWriter() => context.OutWriter;
+        TextWriter INUnitTextWriterProvider.GetWriter() => context.OutWriter;
     }
 }

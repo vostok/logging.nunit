@@ -5,11 +5,11 @@ namespace Vostok.Logging.NUnit
 {
     public sealed class NUnitTextWriterLog : ILog
     {
-        private readonly INUnitTextWriterProvider inUnitTextWriterProvider;
+        private readonly INUnitTextWriterProvider nunitTextWriterProvider;
 
-        public NUnitTextWriterLog(INUnitTextWriterProvider inUnitTextWriterProvider)
+        public NUnitTextWriterLog(INUnitTextWriterProvider nunitTextWriterProvider)
         {
-            this.inUnitTextWriterProvider = inUnitTextWriterProvider;
+            this.nunitTextWriterProvider = nunitTextWriterProvider;
         }
 
         public void Log(LogEvent? @event)
@@ -20,11 +20,11 @@ namespace Vostok.Logging.NUnit
             }
 
             var message = LogEventFormatter.Format(@event, OutputTemplate.Default);
-            inUnitTextWriterProvider.GetWriter().Write(message);
+            nunitTextWriterProvider.GetWriter().Write(message);
         }
 
-        public bool IsEnabledFor(LogLevel level) => true;
+        bool ILog.IsEnabledFor(LogLevel level) => true;
 
-        public ILog ForContext(string context) => this;
+        ILog ILog.ForContext(string context) => this;
     }
 }
