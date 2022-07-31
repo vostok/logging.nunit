@@ -6,7 +6,7 @@
     public interface INUnitMessageWriter
     {
         /// <summary>
-        /// Write log events to NUnit.
+        /// Write a log event to NUnit.
         /// </summary>
         /// <param name="message">Text message to send to NUnit output.</param>
         void Write(string message);

@@ -11,7 +11,7 @@ namespace Vostok.Logging.NUnit.DependencyInjection
         /// Add <see cref="NUnitLog"/> to services.
         /// The <see cref="NUnitLog"/> writes log events to a test context captured during the service addition.
         /// The test context is captured via AsyncLocal TestExecutionContext.CurrentContext.
-        /// It is good as log passed to locally run a vostok or houston application.
+        /// It is good as log passed to locally run a Vostok or Houston application.
         /// </summary>
         /// <param name="serviceCollection">A service collection to add log services.</param>
         /// <returns>The same service collection.</returns>
