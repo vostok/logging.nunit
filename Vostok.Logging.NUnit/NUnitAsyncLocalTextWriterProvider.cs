@@ -6,7 +6,7 @@ namespace Vostok.Logging.NUnit
 {
     /// <summary>
     /// <para>The sink provider which write messages to NUnit immediate output.</para>
-    /// <para>It makes use of AsyncLocal to get NUnit TextWriter during a log event write.</para>
+    /// <para>It makes use of AsyncLocal to get NUnit TextWriter during a log event writing.</para>
     /// </summary>
     public sealed class NUnitAsyncLocalTextWriterProvider : INUnitTextWriterProvider
     {

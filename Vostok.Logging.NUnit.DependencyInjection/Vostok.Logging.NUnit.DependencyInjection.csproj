@@ -13,7 +13,7 @@
   </PropertyGroup>
   <PropertyGroup>
     <Title>Vostok.Logging.NUnit.DependencyInjection</Title>
-    <Description>Microsoft.DependecyInjection extensions for adding Vostok NUnit log.</Description>
+    <Description>Microsoft.DependecyInjection extensions to add Vostok NUnit log.</Description>
   </PropertyGroup>
   <PropertyGroup>
     <PackageProjectUrl>https://github.com/vostok/logging.nunit</PackageProjectUrl>
