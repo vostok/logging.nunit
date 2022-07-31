@@ -1,11 +1,11 @@
 #nullable enable
-Vostok.Logging.NUnit.INUnitTextWriterProvider
-Vostok.Logging.NUnit.INUnitTextWriterProvider.GetWriter() -> System.IO.TextWriter!
-Vostok.Logging.NUnit.NUnitAsyncLocalTextWriterProvider
-Vostok.Logging.NUnit.NUnitAsyncLocalTextWriterProvider.NUnitAsyncLocalTextWriterProvider() -> void
-Vostok.Logging.NUnit.NUnitTestContextTextWriterProvider
-Vostok.Logging.NUnit.NUnitTestContextTextWriterProvider.NUnitTestContextTextWriterProvider(NUnit.Framework.Internal.TestExecutionContext! context) -> void
-Vostok.Logging.NUnit.NUnitTextWriterLog
-Vostok.Logging.NUnit.NUnitTextWriterLog.NUnitTextWriterLog(Vostok.Logging.NUnit.INUnitTextWriterProvider! nunitTextWriterProvider) -> void
-Vostok.Logging.NUnit.NUnitTextWriterLog.Log(Vostok.Logging.Abstractions.LogEvent? event) -> void
-Vostok.Logging.NUnit.NUnitTextWriterLog.ForContext(string! context) -> Vostok.Logging.Abstractions.ILog!
+Vostok.Logging.NUnit.NUnitLog
+Vostok.Logging.NUnit.NUnitLog.NUnitLog(Vostok.Logging.NUnit.INUnitMessageWriter! nunitMessageWriter) -> void
+Vostok.Logging.NUnit.NUnitLog.Log(Vostok.Logging.Abstractions.LogEvent? event) -> void
+Vostok.Logging.NUnit.NUnitLog.ForContext(string! context) -> Vostok.Logging.Abstractions.ILog!
+Vostok.Logging.NUnit.INUnitMessageWriter
+Vostok.Logging.NUnit.INUnitMessageWriter.Write(string! message) -> void
+Vostok.Logging.NUnit.NUnitAsyncLocalMessageWriter
+Vostok.Logging.NUnit.NUnitAsyncLocalMessageWriter.NUnitAsyncLocalMessageWriter() -> void
+Vostok.Logging.NUnit.NUnitTestContextMessageWriter
+Vostok.Logging.NUnit.NUnitTestContextMessageWriter.NUnitTestContextMessageWriter(NUnit.Framework.Internal.TestExecutionContext! context) -> void

@@ -29,7 +29,7 @@ namespace Vostok.Logging.NUnit.Tests
                 serviceCollection.AddAsyncLocalNUnitLog();
             }
 
-            log = serviceCollection.BuildServiceProvider().GetRequiredService<NUnitTextWriterLog>();
+            log = serviceCollection.BuildServiceProvider().GetRequiredService<NUnitLog>();
         }
 
         public ActionTargets Targets { get; }

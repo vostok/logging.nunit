@@ -8,16 +8,16 @@ namespace Vostok.Logging.NUnit
     /// <summary>
     /// <para>A log which outputs events to NUnit.</para>
     /// </summary>
-    public sealed class NUnitTextWriterLog : ILog
+    public sealed class NUnitLog : ILog
     {
-        private readonly INUnitTextWriterProvider nunitTextWriterProvider;
+        private readonly INUnitMessageWriter nunitMessageWriter;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="NUnitTextWriterLog"/> class.
+        /// Initializes a new instance of the <see cref="NUnitLog"/> class.
         /// </summary>
-        /// <param name="nunitTextWriterProvider">NUnit sink provider to write events to.</param>
-        public NUnitTextWriterLog(INUnitTextWriterProvider nunitTextWriterProvider)
-            => this.nunitTextWriterProvider = nunitTextWriterProvider;
+        /// <param name="nunitMessageWriter">NUnit message writer to write events to.</param>
+        public NUnitLog(INUnitMessageWriter nunitMessageWriter)
+            => this.nunitMessageWriter = nunitMessageWriter;
 
         /// <inheritdoc />
         public void Log(LogEvent? @event)
@@ -28,7 +28,7 @@ namespace Vostok.Logging.NUnit
             }
 
             var message = LogEventFormatter.Format(@event, OutputTemplate.Default);
-            nunitTextWriterProvider.GetWriter().Write(message);
+            nunitMessageWriter.Write(message);
         }
 
         /// <inheritdoc />
