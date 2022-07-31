@@ -12,7 +12,6 @@ notests *default:
     - module vostok.logging.abstractions
 
   deps:
-    - msbuild-binary-output
     - vostok.devtools
     - vostok.logging.formatting
     - vostok.logging.abstractions
