@@ -8,3 +8,4 @@ Vostok.Logging.NUnit.NUnitTestContextTextWriterProvider.NUnitTestContextTextWrit
 Vostok.Logging.NUnit.NUnitTextWriterLog
 Vostok.Logging.NUnit.NUnitTextWriterLog.NUnitTextWriterLog(Vostok.Logging.NUnit.INUnitTextWriterProvider! nunitTextWriterProvider) -> void
 Vostok.Logging.NUnit.NUnitTextWriterLog.Log(Vostok.Logging.Abstractions.LogEvent? event) -> void
+Vostok.Logging.NUnit.NUnitTextWriterLog.ForContext(string! context) -> Vostok.Logging.Abstractions.ILog!
