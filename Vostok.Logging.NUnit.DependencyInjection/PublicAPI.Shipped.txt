@@ -1,4 +1,4 @@
 #nullable enable
 Vostok.Logging.NUnit.DependencyInjection.ServiceCollectionExtensions
-static Vostok.Logging.NUnit.DependencyInjection.ServiceCollectionExtensions.AddAsyncLocalNUnitLog(this Microsoft.Extensions.DependencyInjection.IServiceCollection! serviceCollection) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
-static Vostok.Logging.NUnit.DependencyInjection.ServiceCollectionExtensions.AddBoundToCurrentTestContextNUnitLog(this Microsoft.Extensions.DependencyInjection.IServiceCollection! serviceCollection) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Vostok.Logging.NUnit.DependencyInjection.ServiceCollectionExtensions.AddNUnitLogBoundToCurrentTestContext(this Microsoft.Extensions.DependencyInjection.IServiceCollection! serviceCollection) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Vostok.Logging.NUnit.DependencyInjection.ServiceCollectionExtensions.AddNUnitLogWithAsyncLocalProvider(this Microsoft.Extensions.DependencyInjection.IServiceCollection! serviceCollection) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!

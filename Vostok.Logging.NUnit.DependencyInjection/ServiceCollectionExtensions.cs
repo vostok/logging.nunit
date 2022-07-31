@@ -8,22 +8,26 @@ namespace Vostok.Logging.NUnit.DependencyInjection
     public static class ServiceCollectionExtensions
     {
         /// <summary>
-        /// Add <see cref="NUnitLog"/> which writes log events to a test context captured during service addition.
-        /// The test context is captured via AsyncLocal.
+        /// Add <see cref="NUnitLog"/> to services.
+        /// The <see cref="NUnitLog"/> writes log events to a test context captured during the service addition.
+        /// The test context is captured via AsyncLocal TestExecutionContext.CurrentContext.
+        /// It is good as log passed to locally run a vostok or houston application.
         /// </summary>
         /// <param name="serviceCollection">A service collection to add log services.</param>
         /// <returns>The same service collection.</returns>
-        public static IServiceCollection AddBoundToCurrentTestContextNUnitLog(this IServiceCollection serviceCollection) =>
+        public static IServiceCollection AddNUnitLogBoundToCurrentTestContext(this IServiceCollection serviceCollection) =>
             serviceCollection
                 .AddSingleton<INUnitMessageWriter>(new NUnitTestContextMessageWriter(TestExecutionContext.CurrentContext))
                 .AddSingleton<NUnitLog>();
 
         /// <summary>
-        /// Add <see cref="NUnitLog"/> which writes events to test context captured via AsyncLocal during event message write.
+        /// Add <see cref="NUnitLog"/> to services.
+        /// The <see cref="NUnitLog"/> writes events to test context captured via AsyncLocal during log event message writing.
+        /// It is good as general purpose log.
         /// </summary>
         /// <param name="serviceCollection">A service collection to add log services.</param>
         /// <returns>The same service collection.</returns>
-        public static IServiceCollection AddAsyncLocalNUnitLog(this IServiceCollection serviceCollection) =>
+        public static IServiceCollection AddNUnitLogWithAsyncLocalProvider(this IServiceCollection serviceCollection) =>
             serviceCollection
                 .AddSingleton<INUnitMessageWriter, NUnitAsyncLocalMessageWriter>()
                 .AddSingleton<NUnitLog>();

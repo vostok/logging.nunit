@@ -22,11 +22,11 @@ namespace Vostok.Logging.NUnit.Tests
             ServiceCollection serviceCollection = new();
             if (bound)
             {
-                serviceCollection.AddBoundToCurrentTestContextNUnitLog();
+                serviceCollection.AddNUnitLogBoundToCurrentTestContext();
             }
             else
             {
-                serviceCollection.AddAsyncLocalNUnitLog();
+                serviceCollection.AddNUnitLogWithAsyncLocalProvider();
             }
 
             log = serviceCollection.BuildServiceProvider().GetRequiredService<NUnitLog>();
