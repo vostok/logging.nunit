@@ -1,4 +1,5 @@
 ﻿using System;
+using NUnit.Framework;
 using Vostok.Logging.Abstractions;
 using Vostok.Logging.Abstractions.Wrappers;
 using Vostok.Logging.Formatting;
@@ -10,14 +11,10 @@ namespace Vostok.Logging.NUnit
     /// </summary>
     public sealed class NUnitLog : ILog
     {
-        private readonly INUnitMessageWriter nunitMessageWriter;
+        private readonly NUnitLogSettings settings;
 
-        /// <summary>
-        /// Initializes a new instance of the <see cref="NUnitLog"/> class.
-        /// </summary>
-        /// <param name="nunitMessageWriter">NUnit message writer to write events to.</param>
-        public NUnitLog(INUnitMessageWriter nunitMessageWriter)
-            => this.nunitMessageWriter = nunitMessageWriter;
+        public NUnitLog(NUnitLogSettings settings)
+            => this.settings = settings;
 
         /// <inheritdoc />
         public void Log(LogEvent? @event)
@@ -27,8 +24,8 @@ namespace Vostok.Logging.NUnit
                 return;
             }
 
-            var message = LogEventFormatter.Format(@event, OutputTemplate.Default);
-            nunitMessageWriter.Write(message);
+            var message = LogEventFormatter.Format(@event, settings.OutputTemplate);
+            (settings.ContextProvider?.Invoke().OutWriter ?? TestContext.Progress).Write(message);
         }
 
         /// <inheritdoc />
