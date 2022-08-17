@@ -4,7 +4,5 @@ namespace Vostok.Logging.NUnit.Tests.TargetSuite.ContextualLogShouldGoToSetUpFix
 {
     [SetUpFixture]
     [TestFinishLogger(ActionTargets.Suite, false)]
-    internal class SetUpFixture
-    {
-    }
+    internal class SetUpFixture { }
 }

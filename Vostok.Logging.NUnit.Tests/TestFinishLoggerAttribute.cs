@@ -9,8 +9,8 @@ namespace Vostok.Logging.NUnit.Tests
     [AttributeUsage(AttributeTargets.Class)]
     internal class TestFinishLoggerAttribute : ParallelizableAttribute, ITestAction
     {
-        private readonly Stopwatch stopwatch = new();
         private readonly ILog log;
+        private readonly Stopwatch stopwatch = new();
 
         public TestFinishLoggerAttribute(ActionTargets targets, bool bound)
             : base(ParallelScope.Fixtures)

@@ -16,24 +16,18 @@ public class NUnitLogSettings
     public OutputTemplate OutputTemplate { get; set; } = OutputTemplate.Default;
 
     /// <inheritdoc cref="WithCustomTestContext"/>
-    public static NUnitLogSettings WithCurrentTestContext()
-    {
-        return WithCustomTestContext(TestExecutionContext.CurrentContext);
-    }
+    public static NUnitLogSettings WithCurrentTestContext() =>
+        WithCustomTestContext(TestExecutionContext.CurrentContext);
 
     /// <summary>
     /// <see cref="NUnitLog"/> instance with this settings will write events to a specific <see cref="TestExecutionContext"/> of given NUnit test.
     /// </summary>
-    public static NUnitLogSettings WithCustomTestContext(TestExecutionContext testExecutionContext)
-    {
-        return new NUnitLogSettings(() => testExecutionContext);
-    }
+    public static NUnitLogSettings WithCustomTestContext(TestExecutionContext testExecutionContext) =>
+        new NUnitLogSettings(() => testExecutionContext);
 
     /// <inheritdoc cref="WithCustomTestContext"/>
-    public static NUnitLogSettings WithTestContextProvider(Func<TestExecutionContext> contextProvider)
-    {
-        return new NUnitLogSettings(contextProvider);
-    }
+    public static NUnitLogSettings WithTestContextProvider(Func<TestExecutionContext> contextProvider) =>
+        new NUnitLogSettings(contextProvider);
 
     /// <summary>
     /// <see cref="NUnitLog"/> instance with this settings will write events to NUnit immediate output.
@@ -41,8 +35,5 @@ public class NUnitLogSettings
     /// This option is recommended for most cases, but it doesn't work well inside any local applications, because the test context may be lost due to AsyncLocal.
     /// Use <see cref="WithCustomTestContext"/> or <see cref="WithCurrentTestContext"/> for such cases.
     /// </summary>
-    public static NUnitLogSettings WithAsyncLocalContext()
-    {
-        return new NUnitLogSettings();
-    }
+    public static NUnitLogSettings WithAsyncLocalContext() => new NUnitLogSettings();
 }

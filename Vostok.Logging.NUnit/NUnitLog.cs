@@ -20,9 +20,7 @@ namespace Vostok.Logging.NUnit
         public void Log(LogEvent? @event)
         {
             if (@event is null)
-            {
                 return;
-            }
 
             var message = LogEventFormatter.Format(@event, settings.OutputTemplate);
             (settings.ContextProvider?.Invoke().OutWriter ?? TestContext.Progress).Write(message);
@@ -32,9 +30,7 @@ namespace Vostok.Logging.NUnit
         public ILog ForContext(string context)
         {
             if (context == null)
-            {
                 throw new ArgumentNullException(nameof(context));
-            }
 
             return new SourceContextWrapper(this, context);
         }
