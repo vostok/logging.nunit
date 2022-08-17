@@ -1,4 +1,3 @@
-﻿#nullable enable
 #nullable enable
 static Vostok.Logging.NUnit.NUnitLogSettings.WithAsyncLocalContext() -> Vostok.Logging.NUnit.NUnitLogSettings!
 static Vostok.Logging.NUnit.NUnitLogSettings.WithCurrentTestContext() -> Vostok.Logging.NUnit.NUnitLogSettings!
