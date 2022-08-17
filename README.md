@@ -10,24 +10,11 @@ An implementation of ILog that writes log events to NUnit.
 **User documentation**: https://vostok.gitbook.io/logging/
 
 
-## Адаптер восточного лога для NUnit.
+## ILog adapter of NUnit log.
 
-Логи могут быть записаны в:
-1) Контекст теста, который выполняется сейчас. Контекст берется из AsyncLocal. Подходит для стандартных тестов.
-2) В контекст теста, в котором был создан лог. Подходит, для локально поднятых сервисов и других мест, где AsyncLocal-контекст теряется или отсутствует).
+Logs can be written to:
+1) The context of the test, which is currently running. It is suitable for most of the tests. 
+(`NUnitLogSettings.WithAsyncLocalContext()`)
 
----
-
-1) Запись лога в контекст теста, который выполняется сейчас:
-
-а) ILog log = new NUnitTextWriterLog(new NUnitAsyncLocalTextWriterProvider());
-
-б) serviceCollection.AddContextualNUnitLog()
-
-
-2) Запись лога в контекст теста, в котором был создан лог:
-
-а) ILog log = new NUnitTextWriterLog(new NUnitTestContextTextWriterProvider(TestExecutionContext.CurrentContext));
-
-б) serviceCollection.AddBoundNUnitLog()
-
+2) The context of the test, in which the log was created. It is suitable for local services and other places where AsyncLocal context can be lost or absent. 
+(`NUnitLogSettings.WithCurrentTestContext()`)
