@@ -9,7 +9,7 @@ namespace Vostok.Logging.NUnit
     /// <summary>
     /// <para>A log which outputs events to NUnit.</para>
     /// </summary>
-    public sealed class NUnitLog : ILog
+    public class NUnitLog : ILog
     {
         private readonly NUnitLogSettings settings;
 

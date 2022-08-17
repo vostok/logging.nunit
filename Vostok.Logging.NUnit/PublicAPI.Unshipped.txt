@@ -1,10 +1,13 @@
+#nullable enable
+static Vostok.Logging.NUnit.NUnitLogSettings.WithAsyncLocalContext() -> Vostok.Logging.NUnit.NUnitLogSettings!
+static Vostok.Logging.NUnit.NUnitLogSettings.WithCurrentTestContext() -> Vostok.Logging.NUnit.NUnitLogSettings!
+static Vostok.Logging.NUnit.NUnitLogSettings.WithCustomTestContext(NUnit.Framework.Internal.TestExecutionContext! testExecutionContext) -> Vostok.Logging.NUnit.NUnitLogSettings!
+static Vostok.Logging.NUnit.NUnitLogSettings.WithTestContextProvider(System.Func<NUnit.Framework.Internal.TestExecutionContext!>! contextProvider) -> Vostok.Logging.NUnit.NUnitLogSettings!
 Vostok.Logging.NUnit.NUnitLog
-Vostok.Logging.NUnit.NUnitLog.ForContext(string context) -> Vostok.Logging.Abstractions.ILog
-Vostok.Logging.NUnit.NUnitLog.Log(Vostok.Logging.Abstractions.LogEvent event) -> void
-Vostok.Logging.NUnit.NUnitLog.NUnitLog(Vostok.Logging.NUnit.NUnitLogSettings settings) -> void
+Vostok.Logging.NUnit.NUnitLog.ForContext(string! context) -> Vostok.Logging.Abstractions.ILog!
+Vostok.Logging.NUnit.NUnitLog.Log(Vostok.Logging.Abstractions.LogEvent? event) -> void
+Vostok.Logging.NUnit.NUnitLog.NUnitLog(Vostok.Logging.NUnit.NUnitLogSettings! settings) -> void
 Vostok.Logging.NUnit.NUnitLogSettings
-Vostok.Logging.NUnit.NUnitLogSettings.ContextProvider.get -> System.Func<NUnit.Framework.Internal.TestExecutionContext>
-Vostok.Logging.NUnit.NUnitLogSettings.ContextProvider.set -> void
-Vostok.Logging.NUnit.NUnitLogSettings.NUnitLogSettings() -> void
-Vostok.Logging.NUnit.NUnitLogSettings.OutputTemplate.get -> Vostok.Logging.Formatting.OutputTemplate
+Vostok.Logging.NUnit.NUnitLogSettings.ContextProvider.get -> System.Func<NUnit.Framework.Internal.TestExecutionContext!>?
+Vostok.Logging.NUnit.NUnitLogSettings.OutputTemplate.get -> Vostok.Logging.Formatting.OutputTemplate!
 Vostok.Logging.NUnit.NUnitLogSettings.OutputTemplate.set -> void

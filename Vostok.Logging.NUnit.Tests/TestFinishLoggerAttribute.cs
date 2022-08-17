@@ -1,15 +1,13 @@
 ﻿using System;
 using System.Diagnostics;
-using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using NUnit.Framework.Interfaces;
 using Vostok.Logging.Abstractions;
-using Vostok.Logging.NUnit.DependencyInjection;
 
 namespace Vostok.Logging.NUnit.Tests
 {
     [AttributeUsage(AttributeTargets.Class)]
-    internal sealed class TestFinishLoggerAttribute : ParallelizableAttribute, ITestAction
+    internal class TestFinishLoggerAttribute : ParallelizableAttribute, ITestAction
     {
         private readonly Stopwatch stopwatch = new();
         private readonly ILog log;
@@ -19,17 +17,11 @@ namespace Vostok.Logging.NUnit.Tests
         {
             Targets = targets;
 
-            ServiceCollection serviceCollection = new();
-            if (bound)
-            {
-                serviceCollection.AddNUnitLogBoundToCurrentTestContext();
-            }
-            else
-            {
-                serviceCollection.AddNUnitLogWithAsyncLocalProvider();
-            }
+            var settings = bound
+                ? NUnitLogSettings.WithCurrentTestContext()
+                : NUnitLogSettings.WithAsyncLocalContext();
 
-            log = serviceCollection.BuildServiceProvider().GetRequiredService<NUnitLog>();
+            log = new NUnitLog(settings);
         }
 
         public ActionTargets Targets { get; }

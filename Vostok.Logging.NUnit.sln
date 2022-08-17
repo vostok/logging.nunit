@@ -13,8 +13,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		module.yaml = module.yaml
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vostok.Logging.NUnit.DependencyInjection", "Vostok.Logging.NUnit.DependencyInjection\Vostok.Logging.NUnit.DependencyInjection.csproj", "{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,13 +35,6 @@ Global
 		{06B62805-BBF9-4363-9E64-59AAB9D7A451}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06B62805-BBF9-4363-9E64-59AAB9D7A451}.DependencyInjection|Any CPU.ActiveCfg = Release|Any CPU
 		{06B62805-BBF9-4363-9E64-59AAB9D7A451}.NoTests|Any CPU.ActiveCfg = Release|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.DependencyInjection|Any CPU.ActiveCfg = Release|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.DependencyInjection|Any CPU.Build.0 = Release|Any CPU
-		{FBFA8C2A-A7D4-4B09-98FC-9BEE64B3587F}.NoTests|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
