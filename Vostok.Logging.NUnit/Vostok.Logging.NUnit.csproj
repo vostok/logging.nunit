@@ -26,13 +26,6 @@
     <PackageReference Include="NUnit" Version="3.13.2" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Vostok.Logging.Formatting">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\vostok.logging.formatting\Vostok.Logging.Formatting\bin\Release\$(ReferencesFramework)\Vostok.Logging.Formatting.dll</HintPath>
-    </Reference>
-    <Reference Include="Vostok.Logging.Abstractions">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\vostok.logging.abstractions\Vostok.Logging.Abstractions\bin\Release\$(ReferencesFramework)\Vostok.Logging.Abstractions.dll</HintPath>
-    </Reference>
+    <ModuleReference Include="vostok.logging.formatting" />
   </ItemGroup>
 </Project>

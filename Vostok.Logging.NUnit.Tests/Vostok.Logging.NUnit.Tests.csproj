@@ -10,10 +10,7 @@
     <PackageReference Include="FluentAssertions" Version="5.10.3" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Vostok.Logging.Abstractions">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\vostok.logging.abstractions\Vostok.Logging.Abstractions\bin\Release\$(ReferencesFramework)\Vostok.Logging.Abstractions.dll</HintPath>
-    </Reference>
+    <ModuleReference Include="vostok.logging.abstractions" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Vostok.Logging.NUnit\Vostok.Logging.NUnit.csproj" />
