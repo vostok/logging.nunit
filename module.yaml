@@ -10,20 +10,49 @@ notests *default:
   install:
     - bin\Vostok.Logging.NUnit\netstandard2.0\Vostok.Logging.NUnit.dll
     - module vostok.logging.abstractions
+    - groups:
+        - target-framework: "netstandard2.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/netstandard2.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
+        - target-framework: "net6.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/net6.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
+        - target-framework: "net8.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/net8.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
 
   deps:
     - vostok.devtools
     - vostok.logging.formatting
     - vostok.logging.abstractions
 
-dependencyinjection > notests:
-  build:
-    configuration: DependencyInjection
-
+full-build > notests:
   install:
-    - bin\Vostok.Logging.NUnit.DependencyInjection\netstandard2.0\Vostok.Logging.NUnit.DependencyInjection.dll
+    - bin\Vostok.Logging.NUnit\netstandard2.0\Vostok.Logging.NUnit.dll
+    - module vostok.logging.abstractions
+    - groups:
+        - target-framework: "netstandard2.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/netstandard2.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
+        - target-framework: "net6.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/net6.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
+        - target-framework: "net8.0"
+          libraries:
+            - bin/Vostok.Logging.NUnit/net8.0/Vostok.Logging.NUnit.dll
+          modules:
+            - name: vostok.logging.abstractions
 
-full-build > dependencyinjection:
   build:
     configuration: Release
 
